@@ -1,3 +1,4 @@
 .idea
 goscaffold
 bin
+!cmd/goscaffold

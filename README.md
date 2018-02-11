@@ -10,5 +10,26 @@
 
 A minimal project structure generator to begin to programming on Golang quickly
 
+## Golang, what it that?
+Start here [Golang Tour](https://tour.golang.org/welcome/1)
+
+## Why do I need a generator?
+It is a convenient way to have a starting point for all your projects, so that all your projects start with the same dependencies and the same architecture
+
+## Usage  
+
+```sh
+go get -u github.com/aperezg/goscaffold/cmd/goscaffold
+```
+
+To see how to use the tool and the available commands:
+```sh
+goscaffold -h
+```
+
 ## WIP
-This project is actually under construction
+This project is under construction and may contain bugs
+
+Options not implemented yet:
+* gitlabci
+* docker

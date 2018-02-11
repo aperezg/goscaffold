@@ -28,10 +28,11 @@ func (c *consoleClient) Stdin() (setting *Settings) {
 
 	command.Parse(os.Args[4:])
 	if command.Parsed() {
-		applicationName, importPath := c.extractImportPath(workspace)
+		namespace, applicationName, importPath := c.extractRepoPaths(workspace)
 		setting = NewSettings(
 			applicationName,
 			importPath,
+			namespace,
 			*enableGitlabCI,
 			*enableDocker,
 		)
@@ -40,11 +41,11 @@ func (c *consoleClient) Stdin() (setting *Settings) {
 	return
 }
 
-func (c *consoleClient) extractImportPath(workspace *string) (string, string) {
+func (c *consoleClient) extractRepoPaths(workspace *string) (namespace, applicationName, importPath string) {
 	args := os.Args[2:4]
-	var namespace, applicationName = args[0], args[1]
-	importPath := os.ExpandEnv(*workspace) + string(os.PathSeparator) + namespace + string(os.PathSeparator) + applicationName
-	return applicationName, importPath
+	namespace, applicationName = args[0], args[1]
+	importPath = os.ExpandEnv(*workspace) + string(os.PathSeparator) + namespace + string(os.PathSeparator) + applicationName
+	return
 }
 
 func (c *consoleClient) configureHelp() {

@@ -47,7 +47,7 @@ clean:
 ##bindata: Transform to binary data the require file for the application
 .PHONY: bindata
 bindata:
-	go-bindata -pkg=data -o data/bindata.go doc
+	go-bindata -pkg=data -o data/bindata.go doc templates
 
 ##cross compilation
 

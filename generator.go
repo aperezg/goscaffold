@@ -2,6 +2,7 @@ package goscaffold
 
 import (
 	"fmt"
+	"github.com/aperezg/goscaffold/data"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
@@ -70,7 +71,7 @@ func (g *Generator) generateFiles() {
 		outputFile := outputPath + finalFileName
 		fmt.Println(fmt.Sprintf("Generating file %s ...", outputFile))
 
-		b, err := ioutil.ReadFile(templateFilePath)
+		b, err := data.Asset(templateFilePath)
 		if err != nil {
 			log.Fatalf("Can't open %s: %v", templateFilePath, err)
 		}

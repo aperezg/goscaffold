@@ -17,11 +17,10 @@ func (c *consoleClient) Stdin() (setting *Settings) {
 	command := flag.NewFlagSet("create-project", flag.ExitOnError)
 
 	enableGitlabCI := command.Bool("gitlabci", false, "Create a .gitlab-ci with a valid pipeline")
-	enableDocker := command.Bool("docker", false, "Create a project with use a docker container for go project")
 	workspace := command.String("workspace", "$GOPATH/src", "Your golang workspace")
 
 	flag.Parse()
-	if flag.NArg() == 0 {
+	if flag.NArg() < 3 {
 		flag.Usage()
 		os.Exit(1)
 	}
@@ -34,7 +33,6 @@ func (c *consoleClient) Stdin() (setting *Settings) {
 			importPath,
 			namespace,
 			*enableGitlabCI,
-			*enableDocker,
 		)
 	}
 

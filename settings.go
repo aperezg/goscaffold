@@ -5,7 +5,6 @@ type Settings struct {
 	ImportPath      string
 	Namespace       string
 	EnableGitlabCI  bool
-	EnableDocker    bool
 }
 
 func NewSettings(
@@ -13,7 +12,6 @@ func NewSettings(
 	importPath string,
 	namespace string,
 	enableGitlabCI bool,
-	enableDocker bool,
 ) *Settings {
 
 	return &Settings{
@@ -21,6 +19,5 @@ func NewSettings(
 		ImportPath:      importPath,
 		Namespace:       namespace,
 		EnableGitlabCI:  enableGitlabCI,
-		EnableDocker:    enableDocker,
 	}
 }

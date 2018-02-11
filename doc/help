@@ -8,7 +8,6 @@ DESCRIPTION
             * The first argument will be the namespace of your application
             * The second argument is the application name
             --gitlabci With this argument the scaffold tool generate a minimum valid pipeline
-            --docker With this argument the scaffold toold generate all necessary to begin with golang on docker
             --workspace {workspace} if you not use the default workspace you can change with this argument
 EXAMPLES
     The following example show how to implement all options for the tool:

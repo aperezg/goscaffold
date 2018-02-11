@@ -1,0 +1,17 @@
+NAME
+    goscaffold - Create a project scaffold for your golang projects
+SYNOPSIS
+    goscaffold create-project github.com/apereg goscaffold [subcommands...]
+DESCRIPTION
+    goscaffold allow create a basic structrue for your golang projects, furthermore you can enable a basic pipeline gitlab and use your project with docker
+        create-project:
+            * The first argument will be the namespace of your application
+            * The second argument is the application name
+            --gitlabci With this argument the scaffold tool generate a minimum valid pipeline
+            --docker With this argument the scaffold toold generate all necessary to begin with golang on docker
+            --workspace {workspace} if you not use the default workspace you can change with this argument
+EXAMPLES
+    The following example show how to implement all options for the tool:
+        goscaffold create-project github.com/aperezg goscaffold --workspace $GOPATH/other/src --gitlabci --docker
+AUTHOR
+    Adrian Perez (@)

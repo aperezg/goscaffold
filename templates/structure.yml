@@ -1,0 +1,8 @@
+- fileName: _README.md.tmpl
+  path: ""
+- fileName: _sum.go.tmpl
+  path: "sum"
+- fileName: _sum_test.go.tmpl
+  path: "sum"
+- fileName: _.gitignore.tmpl
+  path: ""
